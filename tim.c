@@ -2,9 +2,9 @@
 #include<stdlib.h>
 #include<time.h>
 #define clearbuffer(s, n) memset(s, 0, n);
-const int n=100000;
-const int RUN = 100000;
-int arr[100000];
+const int n=262144;
+const int RUN = 262144;
+int arr[262144];
 double tim;
 int main()
 {
@@ -19,7 +19,6 @@ int main()
     {
         printf("%d ", arr[i]);
     }
-    printf("time required for sorting  using tim sort is =%f seconds\n",tim);
 
     return 0;
 }
@@ -27,7 +26,7 @@ void fileRead()
 {
     int j=0,i=0;
     FILE *file1;
-    file1 = fopen("file1.txt", "r");
+    file1 = fopen("file.txt", "r");
     char characters, allocate[64];
     while(1)
     {
@@ -58,7 +57,7 @@ void fileInput()
 {
     int i=0,j=0;
     FILE *results;
-    results=fopen("result3.txt","w");
+    results=fopen("result.txt","w");
     if (results == NULL)
     {
         puts("error");
@@ -69,7 +68,8 @@ void fileInput()
          printf("%d,",arr[i]);
          fprintf(results,"%d,",arr[i]);
     }
-   fclose(results);
+    printf("tim required for sorting  using gnome sort is =%f seconds\n",tim);
+    fclose(results);
 }
 
 void insertionSort( int left, int right)

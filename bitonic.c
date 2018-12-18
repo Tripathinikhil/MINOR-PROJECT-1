@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include<time.h>
 #define clearbuffer(s, n) memset(s, 0, n);
-const int n=100000;
-int data[100000];
+const int n=262144;
+int data[262144];
 int asc = 1;
 int dsc = 0;
 double tim;
@@ -12,9 +12,6 @@ double tim;
 int main()
 {
     clock_t start;
-
-
-
     int i;
     printf("\nEnter the data");
     fileRead();
@@ -26,14 +23,13 @@ int main()
     {
         printf("%d ", data[i]);
     }
-    printf("time required for sorting  using bitonic sort is =%f seconds\n",tim);
 }
 
 void fileRead()
 {
     int j=0,i=0;
     FILE *file1;
-    file1 = fopen("file1.txt", "r");
+    file1 = fopen("file.txt", "r");
     char characters, allocate[64];
     while(1)
     {
@@ -64,7 +60,7 @@ void fileInput()
 {
     int i=0,j=0;
     FILE *results;
-    results=fopen("result2.txt","w");
+    results=fopen("result.txt","w");
     if (results == NULL)
     {
         puts("error");
@@ -75,7 +71,7 @@ void fileInput()
          printf("%d,",data[i]);
          fprintf(results,"%d,",data[i]);
     }
-
+    printf("tim required for sorting  using gnome sort is =%f seconds\n",tim);
     fclose(results);
 }
 
